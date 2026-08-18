@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caixa da Orquestra Pastor João Batista de Vasconcelos - OPJBV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500&display=swap" rel="stylesheet">
+<!-- Biblioteca do Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/*!
+ * Chart.js v4.4.4
+ * https://www.chartjs.org
+ * (c) 2024 Chart.js Contributors
+ * Released under the MIT License
+ */
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t="undefined"!=typeof globalThis?globalThis:t||self).Chart=e()}(this,(function(){"use strict";var t=Object.freeze({__proto__:null,get Colors(){return Go},get Decimation(){return Qo},get Filler(){return ma},get Legend(){return ya},get SubTitle(){return ka},get Title(){return Ma},get Tooltip(){return Ba}});function t(){}const i=(()=>{let t=0;return()=>t++})();function s(t){return null==t}function n(t){if(Array.isArray&&Array.isArray(t))return!0;const e=Object.prototype.toString.call(t);return"[object"===e.slice(0,7)&&"Array]"===e.slice(-6)}function o(t){return null!==t&&"[object Object]"===Object.prototype.toString.call(t)}function a(t){return("number"==typeof t||t instanceof Number)&&isFinite(+t)}function r(t,e){return a(t)?t:e}function l(t,e){return void 0===t?e:t}const h=(t,e)=>"string"==typeof t&&t.endsWith("%")?parseFloat(t)/100:+t/e,c=(t,e)=>"string"==typeof t&&t.endsWith("%")?parseFloat(t)/100*e:+t;function d(t,e,i){if(t&&"function"==typeof t.call)return t.apply(i,e)}function u(t,e,i,s){let a,r,l;if(n(t))if(r=t.length,s)for(a=r-1;a>=0;a--)e.call(i,t[a],a);else for(a=0;a<r;a++)e.call(i,t[a],a);else if(o(t))for(l=Object.keys(t),r=l.length,a=0;a<r;a++)e.call(i,t[l[a]],l[a])}function f(t,e){let i,s,n,o;if(!t||!e||t.length!==e.length)return!1;for(i=0,s=t.length;i<s;++i)if(n=t[i],o=e[i],n.datasetIndex!==o.datasetIndex||n.index!==o.index)return!1;return!0}function g(t){if(n(t))return t.map(g);if(o(t)){const e=Object.create(null),i=Object.keys(t),s=i.length;let n=0;for(;n<s;++n)e[i[n]]=g(t[i[n]]);return e}return t}function p(t){return-1===["__proto__","prototype","constructor"].indexOf(t)}function m(t,e,i,s){if(!p(t))return;const n=e[t],a=i[t];o(n)&&o(a)?x(n,a,s):e[t]=g(a)}function x(t,e,i){const s=n(e)?e:[e],a=s.length;if(!o(t))return t;const r=(i=i||{}).merger||m;let l;for(let e=0;e<a;++e){if(l=s[e],!o(l))continue;const n=Object.keys(l);for(let e=0,s=n.length;e<s;++e)r(n[e],t,l,i)}return t}function b(t,e){return x(t,e,{merger:_})}function _(t,e,i){if(!p(t))return;const s=e[t],n=i[t];o(s)&&o(n)?b(s,n):Object.prototype.hasOwnProperty.call(e,t)||(e[t]=g(n))}const y={"":t=>t,x:t=>t.x,y:t=>t.y};function v(t){const e=t.split("."),i=[];let s="";for(const t of e)s+=t,s.endsWith("\\")?s=s.slice(0,-1)+".":(i.push(s),s="");return i}function M(t,e){const i=y[e]||(y[e]=function(t){const e=v(t);return t=>{for(const i of e){if(""===i)break;t=t&&t[i]}return t}}(e));return i(t)}const w=t=>t.charAt(0).toUpperCase()+t.slice(1);return An;}));
+
+//# sourceMappingURL=chart.umd.js.map
+</script>
+<style>
+  :root{
+    --cream:#F6F1E6;
+    --paper:#FFFDF7;
+    --ink:#2B231D;
+    --ink-soft:#5B4F45;
+    --burgundy:#6E2233;
+    --burgundy-deep:#4E1725;
+    --gold:#C4972A;
+    --gold-soft:#E7CD8F;
+    --forest:#3F5B44;
+    --forest-soft:#7C9A7F;
+    --line:#DFD3B8;
+    --shadow: 0 10px 30px -12px rgba(43,35,29,0.25);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      linear-gradient(180deg, rgba(110,34,51,0.03), rgba(110,34,51,0) 220px),
+      var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+  }
+  ::selection{ background:var(--gold-soft); }
+
+  .staff{
+    position:relative;
+    height:26px;
+    width:100%;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      var(--line) 0px, var(--line) 1px,
+      transparent 1px, transparent 6px
+    );
+    background-size: 100% 24px;
+    background-position: 0 1px;
+    opacity:0.9;
+  }
+  .staff.thin{height:16px; background-size:100% 15px;}
+
+  #loginScreen{
+    position:fixed; inset:0; background:var(--cream);
+    display:flex; align-items:center; justify-content:center; z-index:1000;
+    padding:20px;
+  }
+  .login-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:18px;
+    padding:36px; max-width:400px; width:100%; box-shadow:var(--shadow);
+    text-align:center;
+  }
+  .login-card h2{ font-family:'Playfair Display',serif; color:var(--burgundy-deep); margin-top:0; }
+
+  #appContent{ display:none; }
+
+  header.app-header{
+    padding:34px 40px 0 40px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .brand-row{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .brand-title{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:2.1rem;
+    color:var(--burgundy-deep);
+    letter-spacing:0.2px;
+    margin:0;
+  }
+  .brand-title em{
+    font-style:italic;
+    color:var(--gold);
+  }
+  .brand-sub{
+    font-family:'Fraunces', serif;
+    font-size:1.02rem;
+    font-weight:500;
+    color:var(--burgundy);
+    margin:4px 0 0 0;
+    letter-spacing:0.2px;
+  }
+  .brand-tagline{
+    font-family:'Inter', sans-serif;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    margin:4px 0 0 0;
+  }
+  .header-staff-wrap{ margin-top:18px; }
+
+  nav.tabs{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 40px;
+    display:flex;
+    gap:6px;
+    margin-top:22px;
+    flex-wrap:wrap;
+  }
+  .tab-btn{
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:0.86rem;
+    letter-spacing:0.3px;
+    color:var(--ink-soft);
+    background:transparent;
+    border:none;
+    padding:12px 18px 14px 18px;
+    cursor:pointer;
+    position:relative;
+    border-radius:10px 10px 0 0;
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  .tab-btn:hover{ color:var(--burgundy); background:rgba(110,34,51,0.05); }
+  .tab-btn.active{ color:var(--burgundy-deep); }
+  .tab-btn.active::after{
+    content:"";
+    position:absolute;
+    left:14px; right:14px; bottom:0;
+    height:3px;
+    background:var(--gold);
+    border-radius:3px;
+  }
+
+  main{
+    max-width:1180px;
+    margin:0 auto;
+    padding:26px 40px 80px 40px;
+  }
+  .view{ display:none; }
+  .view.active{ display:block; animation: fadein 0.25s ease; }
+  @keyframes fadein{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;} }
+
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px 24px;
+  }
+  .card + .card{ margin-top:18px; }
+  .grid{ display:grid; gap:18px; }
+  .grid.cols-4{ grid-template-columns: repeat(4, 1fr); }
+  .grid.cols-2{ grid-template-columns: 1.1fr 1fr; }
+  .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
+  @media(max-width:900px){
+    .grid.cols-4{ grid-template-columns: repeat(2,1fr); }
+    .grid.cols-2{ grid-template-columns: 1fr; }
+    .grid.cols-3{ grid-template-columns: 1fr; }
+    header.app-header, nav.tabs, main{ padding-left:18px; padding-right:18px; }
+  }
+
+  .kpi-label{
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.9px;
+    color:var(--ink-soft);
+    font-weight:600;
+    margin:0 0 8px 0;
+  }
+  .kpi-value{
+    font-family:'Playfair Display', serif;
+    font-size:1.65rem;
+    font-weight:700;
+    margin:0;
+    color:var(--ink);
+  }
+  .kpi-value.pos{ color:var(--forest); }
+  .kpi-value.neg{ color:var(--burgundy); }
+  .kpi-sub{ font-size:0.78rem; color:var(--ink-soft); margin-top:6px;}
+
+  h2.section-title{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-size:1.2rem;
+    color:var(--burgundy-deep);
+    margin:0 0 4px 0;
+  }
+  p.section-desc{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    margin:0 0 16px 0;
+  }
+
+  label{
+    display:block;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+    font-weight:600;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+  }
+  input[type=text], input[type=date], input[type=number], input[type=email], input[type=password], select, textarea{
+    width:100%;
+    font-family:'Inter',sans-serif;
+    font-size:0.92rem;
+    padding:10px 12px;
+    border:1px solid var(--line);
+    border-radius:9px;
+    background:#fff;
+    color:var(--ink);
+    outline:none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  input:focus, select:focus, textarea:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(196,151,42,0.18);
+  }
+  .field{ margin-bottom:14px; text-align:left; }
+  .row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .row > .field{ flex:1; min-width:140px; }
+
+  .btn{
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:0.85rem;
+    border:none;
+    border-radius:9px;
+    padding:11px 20px;
+    cursor:pointer;
+    transition: transform 0.1s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .btn:active{ transform:translateY(1px); }
+  .btn-primary{ background:var(--burgundy); color:#fff; width:100%; }
+  .btn-primary:hover{ background:var(--burgundy-deep); }
+  .btn-gold{ background:var(--gold); color:#3a2a05; }
+  .btn-gold:hover{ background:#b0862a; }
+  .btn-ghost{ background:transparent; color:var(--ink-soft); border:1px solid var(--line); }
+  .btn-ghost:hover{ border-color:var(--burgundy); color:var(--burgundy); }
+  .btn-sm{ padding:6px 12px; font-size:0.76rem; border-radius:7px; width:auto; }
+  .btn-danger{ background:transparent; color:var(--burgundy); border:1px solid rgba(110,34,51,0.3); width:auto; }
+  .btn-danger:hover{ background:rgba(110,34,51,0.08); }
+
+  table{ width:100%; border-collapse:collapse; font-size:0.85rem; }
+  thead th{
+    text-align:left;
+    font-size:0.68rem;
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+    color:var(--ink-soft);
+    font-weight:700;
+    padding:8px 10px;
+    border-bottom:2px solid var(--line);
+    white-space:nowrap;
+  }
+  tbody td{
+    padding:10px 10px;
+    border-bottom:1px solid var(--line);
+    vertical-align:middle;
+  }
+  tbody tr:hover{ background:rgba(196,151,42,0.06); }
+  .pill{
+    display:inline-block;
+    padding:3px 10px;
+    border-radius:20px;
+    font-size:0.72rem;
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .pill-entrada{ background:rgba(63,91,68,0.13); color:var(--forest); }
+  .pill-saida{ background:rgba(110,34,51,0.11); color:var(--burgundy); }
+  .val-entrada{ color:var(--forest); font-weight:700; }
+  .val-saida{ color:var(--burgundy); font-weight:700; }
+  .txt-muted{ color:var(--ink-soft); }
+  .cat-dot{ display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:7px; }
+
+  .table-wrap{ overflow-x:auto; }
+  .empty-state{
+    text-align:center;
+    padding:40px 20px;
+    color:var(--ink-soft);
+  }
+  .empty-state .staff{ max-width:220px; margin:0 auto 14px auto; }
+
+  .filters-bar{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    align-items:flex-end;
+    margin-bottom:18px;
+  }
+  .filters-bar .field{ margin-bottom:0; min-width:150px; }
+  .filters-bar .field.grow{ flex:1; min-width:200px; }
+
+  .cat-manager-col h3{
+    font-family:'Playfair Display', serif;
+    font-size:1rem;
+    margin:0 0 12px 0;
+    color:var(--ink);
+  }
+  .cat-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:9px 12px;
+    border:1px solid var(--line);
+    border-radius:9px;
+    margin-bottom:8px;
+    background:#fff;
+  }
+  .cat-item-left{ display:flex; align-items:center; gap:9px; font-size:0.88rem; }
+
+  .chart-box{ position:relative; height:250px; }
+  .legend-list{ display:flex; flex-direction:column; gap:7px; margin-top:14px; font-size:0.8rem; }
+  .legend-item{ display:flex; justify-content:space-between; align-items:center; }
+  .legend-left{ display:flex; align-items:center; gap:8px; }
+
+  .toggle-row{ display:flex; align-items:center; gap:10px; font-size:0.85rem; color:var(--ink-soft); }
+  .switch{ position:relative; width:38px; height:21px; flex-shrink:0; }
+  .switch input{ opacity:0; width:0; height:0; }
+  .slider{
+    position:absolute; cursor:pointer; inset:0;
+    background:#d8cdb2; border-radius:20px; transition:0.2s;
+  }
+  .slider::before{
+    content:""; position:absolute; height:15px; width:15px; left:3px; top:3px;
+    background:#fff; border-radius:50%; transition:0.2s;
+  }
+  .switch input:checked + .slider{ background:var(--burgundy); }
+  .switch input:checked + .slider::before{ transform:translateX(17px); }
+
+  .modal-backdrop{
+    position:fixed; inset:0; background:rgba(43,35,29,0.45);
+    display:none; align-items:center; justify-content:center; z-index:50; padding:20px;
+  }
+  .modal-backdrop.active{ display:flex; }
+  .modal{
+    background:var(--paper); border-radius:16px; max-width:480px; width:100%;
+    padding:26px 26px 22px 26px; box-shadow:0 20px 60px rgba(0,0,0,0.3); text-align:left;
+  }
+  .modal h3{ font-family:'Playfair Display', serif; margin:0 0 14px 0; color:var(--burgundy-deep); }
+  .modal-actions{ display:flex; justify-content:flex-end; gap:10px; margin-top:18px; }
+
+  .toast{
+    position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--ink); color:#fff; padding:12px 20px; border-radius:10px;
+    font-size:0.85rem; opacity:0; pointer-events:none; transition:0.25s ease; z-index:99;
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+  .settings-inline{ display:flex; gap:20px; flex-wrap:wrap; align-items:flex-end; }
+
+  footer.app-footer{
+    text-align:center; padding:30px 20px 50px 20px; color:var(--ink-soft); font-size:0.76rem;
+  }
+
+  @media print{
+    body *{ visibility:hidden; }
+    #reportPrintArea, #reportPrintArea *{ visibility:visible; }
+    #reportPrintArea{ position:absolute; top:0; left:0; width:100%; padding:20px; }
+    .no-print{ display:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TELA DE LOGIN -->
+<div id="loginScreen">
+  <div class="login-card">
+    <h2>Caixa da Orquestra</h2>
+    <p class="section-desc">Faça login com sua conta do Supabase para acessar o painel financeiro.</p>
+    <form onsubmit="handleLogin(event)">
+      <div class="field">
+        <label>E-mail</label>
+        <input type="email" id="loginEmail" placeholder="seu@email.com" required>
+      </div>
+      <div class="field">
+        <label>Senha</label>
+        <input type="password" id="loginPassword" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="margin-top:8px;">Entrar</button>
+    </form>
+    <p id="loginError" class="txt-muted" style="color:var(--burgundy); font-size:0.8rem; margin-top:12px; display:none;"></p>
+  </div>
+</div>
+
+<!-- APLICAÇÃO PRINCIPAL -->
+<div id="appContent">
+<header class="app-header">
+  <div class="brand-row">
+    <div>
+      <h1 class="brand-title">Caixa da <em>Orquestra</em></h1>
+      <p class="brand-sub">Pastor João Batista de Vasconcelos — OPJBV</p>
+      <p class="brand-tagline">Controle financeiro — entradas, saídas e prestação de contas</p>
+    </div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <button class="btn btn-ghost btn-sm" onclick="openSettings()">Saldo inicial</button>
+      <button class="btn btn-ghost btn-sm" onclick="exportJSON()">Exportar dados</button>
+      <button class="btn btn-danger btn-sm" onclick="handleLogout()">Sair</button>
+    </div>
+  </div>
+  <div class="header-staff-wrap"><div class="staff"></div></div>
+</header>
+
+<nav class="tabs">
+  <button class="tab-btn active" data-view="dashboard" onclick="switchView('dashboard')">Visão Geral</button>
+  <button class="tab-btn" data-view="lancamentos" onclick="switchView('lancamentos')">Lançamentos</button>
+  <button class="tab-btn" data-view="categorias" onclick="switchView('categorias')">Categorias</button>
+  <button class="tab-btn" data-view="prestacao" onclick="switchView('prestacao')">Prestação de Contas</button>
+</nav>
+
+<main>
+
+  <!-- ==================== DASHBOARD ==================== -->
+  <section id="view-dashboard" class="view active">
+    <div class="card" style="margin-bottom:18px;">
+      <div class="filters-bar" style="margin-bottom:0;">
+        <div class="field">
+          <label>Período</label>
+          <select id="dashPeriodo" onchange="onDashPeriodoChange()">
+            <option value="mes">Último mês</option>
+            <option value="bimestre">Último bimestre</option>
+            <option value="trimestre">Último trimestre</option>
+            <option value="semestre">Último semestre</option>
+            <option value="ano">Último ano</option>
+            <option value="total">Total</option>
+            <option value="custom">Personalizado</option>
+          </select>
+        </div>
+        <div class="field" id="dashCustomStartWrap" style="display:none;">
+          <label>De</label>
+          <input type="date" id="dashCustomStart" onchange="renderDashboard()">
+        </div>
+        <div class="field" id="dashCustomEndWrap" style="display:none;">
+          <label>Até</label>
+          <input type="date" id="dashCustomEnd" onchange="renderDashboard()">
+        </div>
+        <div class="field grow" style="display:flex; align-items:flex-end; justify-content:flex-end;">
+          <span class="txt-muted" id="dashPeriodLabel" style="font-size:0.82rem;"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid cols-4" id="kpiGrid"></div>
+
+    <div class="card" style="margin-top:18px;">
+      <h2 class="section-title">Resultado por mês</h2>
+      <p class="section-desc">Entradas e saídas dos últimos 6 meses.</p>
+      <div class="chart-box" style="height:220px;">
+        <canvas id="monthlyBarChart"></canvas>
+      </div>
+    </div>
+
+    <div class="grid cols-2" style="margin-top:18px;">
+      <div class="card">
+        <h2 class="section-title">Entradas por categoria</h2>
+        <p class="section-desc" id="entradaDonutDesc">Referente ao período selecionado.</p>
+        <div class="chart-box"><canvas id="entradaDonut"></canvas></div>
+        <div class="legend-list" id="entradaLegend"></div>
+      </div>
+      <div class="card">
+        <h2 class="section-title">Saídas por categoria</h2>
+        <p class="section-desc" id="saidaDonutDesc">Referente ao período selecionado.</p>
+        <div class="chart-box"><canvas id="saidaDonut"></canvas></div>
+        <div class="legend-list" id="saidaLegend"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LANÇAMENTOS ==================== -->
+  <section id="view-lancamentos" class="view">
+    <div class="card">
+      <h2 class="section-title" id="formTitle">Novo lançamento</h2>
+      <p class="section-desc">Preencha os dados da movimentação financeira.</p>
+      <form id="transactionForm" onsubmit="return handleSubmitTransaction(event)">
+        <input type="hidden" id="txId">
+        <div class="row">
+          <div class="field">
+            <label>Tipo</label>
+            <select id="txTipo" onchange="populateCategorySelect()">
+              <option value="entrada">Entrada</option>
+              <option value="saida">Saída</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Data</label>
+            <input type="date" id="txData" required>
+          </div>
+          <div class="field">
+            <label>Valor (R$)</label>
+            <input type="number" id="txValor" step="0.01" min="0" placeholder="0,00" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label>Categoria</label>
+            <select id="txCategoria" required></select>
+          </div>
+          <div class="field">
+            <label>Forma de pagamento</label>
+            <select id="txForma">
+              <option>Pix</option>
+              <option>Dinheiro</option>
+              <option>Cartão</option>
+              <option>Transferência</option>
+              <option>Boleto</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Responsável</label>
+            <select id="txResponsavel"></select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Descrição / Histórico</label>
+          <input type="text" id="txDescricao" placeholder="Ex: Pagamento da afinação do piano" required>
+        </div>
+        <div class="field">
+          <label>Comprovante (link ou nº do documento)</label>
+          <input type="text" id="txComprovante" placeholder="https://... ou nº da nota fiscal">
+        </div>
+        <div style="display:flex; gap:10px; margin-top:6px;">
+          <button type="submit" class="btn btn-primary" id="submitBtnLabel" style="width:auto;">Adicionar lançamento</button>
+          <button type="button" class="btn btn-ghost" id="cancelEditBtn" style="display:none; width:auto;" onclick="cancelEdit()">Cancelar edição</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h2 class="section-title">Todos os lançamentos</h2>
+      <div class="filters-bar">
+        <div class="field">
+          <label>Período</label>
+          <select id="fPeriodo" onchange="onPeriodoChange()">
+            <option value="mes">Mês atual</option>
+            <option value="trimestre">Últimos 3 meses</option>
+            <option value="ano">Ano atual</option>
+            <option value="tudo">Tudo</option>
+            <option value="custom">Personalizado</option>
+          </select>
+        </div>
+        <div class="field" id="fCustomStartWrap" style="display:none;">
+          <label>De</label>
+          <input type="date" id="fCustomStart">
+        </div>
+        <div class="field" id="fCustomEndWrap" style="display:none;">
+          <label>Até</label>
+          <input type="date" id="fCustomEnd">
+        </div>
+        <div class="field">
+          <label>Tipo</label>
+          <select id="fTipo"><option value="">Todos</option><option value="entrada">Entrada</option><option value="saida">Saída</option></select>
+        </div>
+        <div class="field">
+          <label>Categoria</label>
+          <select id="fCategoria"><option value="">Todas</option></select>
+        </div>
+        <div class="field">
+          <label>Forma de pagamento</label>
+          <select id="fForma">
+            <option value="">Todas</option>
+            <option>Pix</option><option>Dinheiro</option><option>Cartão</option><option>Transferência</option><option>Boleto</option>
+          </select>
+        </div>
+        <div class="field grow">
+          <label>Buscar</label>
+          <input type="text" id="fBusca" placeholder="Descrição, responsável...">
+        </div>
+        <div class="field">
+          <label>&nbsp;</label>
+          <button class="btn btn-ghost btn-sm" onclick="resetFilters()">Limpar filtros</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th><th>Tipo</th><th>Categoria</th><th>Descrição</th>
+              <th>Forma</th><th>Responsável</th><th>Comprovante</th><th style="text-align:right;">Valor</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="txTableBody"></tbody>
+        </table>
+      </div>
+      <div id="txEmptyState" class="empty-state" style="display:none;">
+        <div class="staff thin"></div>
+        <p>Nenhum lançamento encontrado para os filtros selecionados.</p>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:28px; padding-top:14px; border-top:1px solid var(--line); margin-top:6px; font-size:0.85rem;">
+        <span>Entradas: <strong class="val-entrada" id="sumEntradasFiltro">R$ 0,00</strong></span>
+        <span>Saídas: <strong class="val-saida" id="sumSaidasFiltro">R$ 0,00</strong></span>
+        <span>Resultado: <strong id="sumResultadoFiltro">R$ 0,00</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CATEGORIAS ==================== -->
+  <section id="view-categorias" class="view">
+    <div class="grid cols-3">
+      <div class="card cat-manager-col">
+        <h3>Categorias de Entrada</h3>
+        <div id="catListEntrada"></div>
+        <div class="row" style="margin-top:12px;">
+          <div class="field" style="margin-bottom:0;">
+            <input type="text" id="newCatEntrada" placeholder="Nova categoria de entrada" onkeydown="if(event.key==='Enter'){event.preventDefault(); addCategory('entrada');}">
+          </div>
+          <button class="btn btn-gold btn-sm" onclick="addCategory('entrada')">Adicionar</button>
+        </div>
+      </div>
+      <div class="card cat-manager-col">
+        <h3>Categorias de Saída</h3>
+        <div id="catListSaida"></div>
+        <div class="row" style="margin-top:12px;">
+          <div class="field" style="margin-bottom:0;">
+            <input type="text" id="newCatSaida" placeholder="Nova categoria de saída" onkeydown="if(event.key==='Enter'){event.preventDefault(); addCategory('saida');}">
+          </div>
+          <button class="btn btn-gold btn-sm" onclick="addCategory('saida')">Adicionar</button>
+        </div>
+      </div>
+      <div class="card cat-manager-col">
+        <h3>Responsáveis</h3>
+        <p class="section-desc" style="margin-bottom:12px;">Cadastre aqui os nomes para selecioná-los rapidamente.</p>
+        <div id="catListResponsavel"></div>
+        <div class="row" style="margin-top:12px;">
+          <div class="field" style="margin-bottom:0;">
+            <input type="text" id="newResponsavel" placeholder="Nome do responsável" onkeydown="if(event.key==='Enter'){event.preventDefault(); addResponsavel();}">
+          </div>
+          <button class="btn btn-gold btn-sm" onclick="addResponsavel()">Adicionar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRESTAÇÃO DE CONTAS ==================== -->
+  <section id="view-prestacao" class="view">
+    <div class="card no-print">
+      <h2 class="section-title">Relatório de transparência</h2>
+      <p class="section-desc">Gere uma visão simplificada para compartilhar com o grupo.</p>
+      <div class="filters-bar">
+        <div class="field">
+          <label>Período</label>
+          <select id="rPeriodo" onchange="onReportPeriodoChange()">
+            <option value="mes">Mês atual</option>
+            <option value="trimestre">Últimos 3 meses</option>
+            <option value="ano">Ano atual</option>
+            <option value="tudo">Tudo</option>
+            <option value="custom">Personalizado</option>
+          </select>
+        </div>
+        <div class="field" id="rCustomStartWrap" style="display:none;">
+          <label>De</label>
+          <input type="date" id="rCustomStart">
+        </div>
+        <div class="field" id="rCustomEndWrap" style="display:none;">
+          <label>Até</label>
+          <input type="date" id="rCustomEnd">
+        </div>
+        <div class="field">
+          <label>Categoria</label>
+          <select id="rCategoria"><option value="">Todas</option></select>
+        </div>
+        <div class="field">
+          <label>&nbsp;</label>
+          <div class="toggle-row">
+            <label class="switch"><input type="checkbox" id="rOcultarSensiveis" checked><span class="slider"></span></label>
+            <span>Ocultar dados sensíveis</span>
+          </div>
+        </div>
+        <div class="field">
+          <label>&nbsp;</label>
+          <button class="btn btn-primary btn-sm" onclick="renderReport()">Gerar relatório</button>
+        </div>
+        <div class="field">
+          <label>&nbsp;</label>
+          <button class="btn btn-ghost btn-sm" onclick="window.print()">Exportar / Imprimir PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="reportPrintArea" class="card" style="margin-top:18px;">
+      <div style="margin-bottom:6px;">
+        <p style="font-family:'Fraunces',serif; color:var(--burgundy); font-size:0.9rem; font-weight:500; margin:0;">Orquestra Pastor João Batista de Vasconcelos — OPJBV</p>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
+        <h2 style="font-family:'Playfair Display',serif; color:var(--burgundy-deep); margin:0;">Prestação de Contas</h2>
+        <span id="reportPeriodLabel" class="txt-muted" style="font-size:0.85rem;"></span>
+      </div>
+      <div class="staff thin" style="margin:10px 0 18px 0;"></div>
+
+      <div class="grid cols-4" id="reportKpis" style="margin-bottom:18px;"></div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr id="reportTableHead">
+              <th>Data</th><th>Tipo</th><th>Categoria</th><th>Descrição</th><th style="text-align:right;">Valor</th>
+            </tr>
+          </thead>
+          <tbody id="reportTableBody"></tbody>
+        </table>
+      </div>
+      <div id="reportEmptyState" class="empty-state" style="display:none;">
+        <p>Nenhum lançamento no período selecionado.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="app-footer">OPJBV — Orquestra Pastor João Batista de Vasconcelos · Integrado com Supabase.</footer>
+</div>
+
+<!-- Settings modal -->
+<div class="modal-backdrop" id="settingsModal">
+  <div class="modal">
+    <h3>Saldo inicial em caixa</h3>
+    <p class="section-desc">Informe os valores de partida para cálculo do saldo atual.</p>
+    <div class="settings-inline">
+      <div class="field" style="flex:1;">
+        <label>Conta(s) bancária(s) (R$)</label>
+        <input type="number" id="settingsBanco" step="0.01">
+      </div>
+      <div class="field" style="flex:1;">
+        <label>Dinheiro em espécie (R$)</label>
+        <input type="number" id="settingsEspecie" step="0.01">
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost btn-sm" onclick="closeSettings()">Cancelar</button>
+      <button class="btn btn-primary btn-sm" onclick="saveSettings()" style="width:auto;">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const SUPABASE_URL = 'https://gwetuummkxempzththkp.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd3ZXR1dW1ta3hlbXB6dGh0aGtwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5ODE0MzksImV4cCI6MjEwMjU1NzQzOX0.VcxlWg9fu_aGEAJOqzJVb0LXvakXgK3bRyk3C6EQxok';
+
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const DEFAULT_STATE = {
+  saldoInicial: { banco: 0, especie: 0 },
+  categorias: {
+    entrada: ['Mensalidades/Contribuições', 'Apoio', 'Doações / Campanhas', 'Editais e Leis de Incentivo'],
+    saida: ['Artístico / Humano', 'Logística e Transporte', 'Infraestrutura e Ensaios', 'Partituras e Direitos', 'Marketing e Divulgação', 'Administrativo'],
+    responsaveis: []
+  },
+  transacoes: []
+};
+
+let state = structuredClone(DEFAULT_STATE);
+
+async function checkAuth(){
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if(session){
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('appContent').style.display = 'block';
+    await loadStateFromSupabase();
+  }else{
+    document.getElementById('loginScreen').style.display = 'flex';
+    document.getElementById('appContent').style.display = 'none';
+  }
+}
+
+async function handleLogin(e){
+  e.preventDefault();
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+  const errEl = document.getElementById('loginError');
+
+  const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+  if(error){
+    errEl.textContent = 'E-mail ou senha incorretos.';
+    errEl.style.display = 'block';
+  }else{
+    errEl.style.display = 'none';
+    checkAuth();
+  }
+}
+
+async function handleLogout(){
+  await supabaseClient.auth.signOut();
+  location.reload();
+}
+
+async function loadStateFromSupabase(){
+  try{
+    const { data, error } = await supabaseClient
+      .from('financeiro_caixa')
+      .select('*');
+
+    if(error){
+      console.error('Erro ao buscar do Supabase:', error);
+      showToast('Erro ao carregar dados da nuvem.');
+      return;
+    }
+
+    if(data){
+      state.transacoes = data.map(item => ({
+        id: item.id,
+        data: item.data,
+        tipo: item.tipo,
+        categoria: item.categoria,
+        descricao: item.descricao,
+        valor: parseFloat(item.valor) || 0,
+        formaPagamento: item.forma_pagamento,
+        responsavel: item.responsavel,
+        comprovante: item.comprovante
+      }));
+
+      state.categorias.responsaveis = [...new Set(state.transacoes.map(t => (t.responsavel||'').trim()).filter(Boolean))];
+
+      renderDashboard();
+      renderTransactionsView();
+    }
+  }catch(err){
+    console.error('Erro de conexão:', err);
+  }
+}
+
+async function saveTransactionToSupabase(tx){
+  try{
+    const { error } = await supabaseClient
+      .from('financeiro_caixa')
+      .upsert({
+        id: tx.id,
+        data: tx.data,
+        tipo: tx.tipo,
+        categoria: tx.categoria,
+        descricao: tx.descricao,
+        valor: tx.valor,
+        forma_pagamento: tx.formaPagamento,
+        responsavel: tx.responsavel,
+        comprovante: tx.comprovante
+      });
+
+    if(error){
+      console.error('Erro ao salvar no Supabase:', error);
+      showToast('Erro ao salvar na nuvem.');
+    }else{
+      showToast('Salvo com sucesso na nuvem!');
+    }
+  }catch(err){
+    console.error('Erro:', err);
+  }
+}
+
+async function deleteTransactionFromSupabase(id){
+  try{
+    const { error } = await supabaseClient
+      .from('financeiro_caixa')
+      .delete()
+      .eq('id', id);
+
+    if(error){
+      console.error('Erro ao excluir:', error);
+      showToast('Erro ao excluir da nuvem.');
+    }
+  }catch(err){
+    console.error('Erro:', err);
+  }
+}
+
+function saveState(){
+  localStorage.setItem('orquestraCaixa_meta', JSON.stringify({ saldoInicial: state.saldoInicial, categorias: state.categorias }));
+}
+
+try{
+  const rawMeta = localStorage.getItem('orquestraCaixa_meta');
+  if(rawMeta){
+    const meta = JSON.parse(rawMeta);
+    if(meta.saldoInicial) state.saldoInicial = meta.saldoInicial;
+    if(meta.categorias) state.categorias = meta.categorias;
+  }
+}catch(e){}
+
+function uid(){ return 't_' + Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(()=> t.classList.remove('show'), 2400);
+}
+
+function formatBRL(v){
+  return (v||0).toLocaleString('pt-BR', { style:'currency', currency:'BRL' });
+}
+function formatDateBR(iso){
+  if(!iso) return '';
+  const [y,m,d] = iso.split('-');
+  return `${d}/${m}/${y}`;
+}
+
+const CAT_COLORS = ['#6E2233','#C4972A','#3F5B44','#7C4A6E','#3B6E82','#B8622F','#8A7B3F','#4E1725','#5B7B9A','#9A5B4E'];
+function colorForCategory(name, list){
+  const idx = list.indexOf(name);
+  return CAT_COLORS[idx >= 0 ? idx % CAT_COLORS.length : 0];
+}
+
+function switchView(view){
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById('view-' + view).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.view === view));
+  if(view === 'dashboard') renderDashboard();
+  if(view === 'lancamentos') renderTransactionsView();
+  if(view === 'categorias') renderCategoriesView();
+  if(view === 'prestacao') renderReport();
+}
+
+function renderCategoriesView(){
+  renderCatList('entrada');
+  renderCatList('saida');
+  renderResponsavelList();
+}
+
+function renderCatList(tipo){
+  const container = document.getElementById(tipo === 'entrada' ? 'catListEntrada' : 'catListSaida');
+  const list = state.categorias[tipo];
+  container.innerHTML = '';
+  if(list.length === 0){
+    container.innerHTML = '<p class="txt-muted" style="font-size:0.85rem;">Nenhuma categoria cadastrada.</p>';
+    return;
+  }
+  list.forEach((cat) => {
+    const div = document.createElement('div');
+    div.className = 'cat-item';
+    div.innerHTML = `
+      <div class="cat-item-left">
+        <span class="cat-dot" style="background:${colorForCategory(cat, list)}"></span>
+        <span>${escapeHtml(cat)}</span>
+      </div>
+      <div><button class="btn btn-sm btn-danger" onclick="removeCategory('${tipo}', ${jsAttr(cat)})">Remover</button></div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function addCategory(tipo){
+  const input = document.getElementById(tipo === 'entrada' ? 'newCatEntrada' : 'newCatSaida');
+  const val = input.value.trim();
+  if(!val){ showToast('Digite um nome.'); return; }
+  state.categorias[tipo].push(val);
+  input.value = '';
+  saveState();
+  renderCatList(tipo);
+  populateCategorySelect();
+  populateFilterCategorySelects();
+  showToast('Categoria adicionada.');
+}
+
+function removeCategory(tipo, cat){
+  state.categorias[tipo] = state.categorias[tipo].filter(c => c !== cat);
+  saveState();
+  renderCatList(tipo);
+  populateCategorySelect();
+  populateFilterCategorySelects();
+  showToast('Categoria removida.');
+}
+
+function renderResponsavelList(){
+  const container = document.getElementById('catListResponsavel');
+  const list = state.categorias.responsaveis;
+  container.innerHTML = '';
+  if(list.length === 0){
+    container.innerHTML = '<p class="txt-muted" style="font-size:0.85rem;">Nenhum responsável cadastrado.</p>';
+    return;
+  }
+  list.forEach((nome) => {
+    const div = document.createElement('div');
+    div.className = 'cat-item';
+    div.innerHTML = `
+      <div class="cat-item-left"><span>${escapeHtml(nome)}</span></div>
+      <div><button class="btn btn-sm btn-danger" onclick="removeResponsavel(${jsAttr(nome)})">Remover</button></div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function addResponsavel(){
+  const input = document.getElementById('newResponsavel');
+  const val = input.value.trim();
+  if(!val){ showToast('Digite um nome.'); return; }
+  if(!state.categorias.responsaveis.includes(val)){
+    state.categorias.responsaveis.push(val);
+    saveState();
+  }
+  input.value = '';
+  renderResponsavelList();
+  populateResponsavelSelect();
+  showToast('Responsável adicionado.');
+}
+
+function removeResponsavel(nome){
+  state.categorias.responsaveis = state.categorias.responsaveis.filter(r => r !== nome);
+  saveState();
+  renderResponsavelList();
+  populateResponsavelSelect();
+  showToast('Responsável removido.');
+}
+
+function escapeHtml(str){
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function jsAttr(str){
+  return JSON.stringify(str).replace(/"/g, '&quot;');
+}
+
+let editingId = null;
+
+function populateCategorySelect(){
+  const tipo = document.getElementById('txTipo').value;
+  const sel = document.getElementById('txCategoria');
+  const list = state.categorias[tipo];
+  sel.innerHTML = list.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+}
+
+function populateResponsavelSelect(keepValue){
+  const sel = document.getElementById('txResponsavel');
+  const current = keepValue !== undefined ? keepValue : sel.value;
+  const list = state.categorias.responsaveis;
+  sel.innerHTML = '<option value="">Selecione…</option>' + list.map(r => `<option value="${escapeHtml(r)}">${escapeHtml(r)}</option>`).join('');
+  sel.value = current || '';
+}
+
+function populateFilterCategorySelects(){
+  const allCats = [...new Set([...state.categorias.entrada, ...state.categorias.saida])];
+  ['fCategoria','rCategoria'].forEach(id => {
+    const sel = document.getElementById(id);
+    const current = sel.value;
+    sel.innerHTML = '<option value="">Todas</option>' + allCats.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+    sel.value = current;
+  });
+}
+
+document.getElementById('txData').valueAsDate = new Date();
+
+async function handleSubmitTransaction(e){
+  e.preventDefault();
+  const tipo = document.getElementById('txTipo').value;
+  const categoria = document.getElementById('txCategoria').value;
+
+  const tx = {
+    id: editingId || uid(),
+    data: document.getElementById('txData').value,
+    tipo,
+    categoria,
+    descricao: document.getElementById('txDescricao').value.trim(),
+    valor: parseFloat(document.getElementById('txValor').value) || 0,
+    formaPagamento: document.getElementById('txForma').value,
+    responsavel: document.getElementById('txResponsavel').value.trim(),
+    comprovante: document.getElementById('txComprovante').value.trim()
+  };
+
+  if(editingId){
+    const idx = state.transacoes.findIndex(t => t.id === editingId);
+    if(idx !== -1) state.transacoes[idx] = tx;
+  }else{
+    state.transacoes.push(tx);
+  }
+
+  await saveTransactionToSupabase(tx);
+  cancelEdit();
+  renderTransactionsView();
+  renderDashboard();
+  return false;
+}
+
+function cancelEdit(){
+  editingId = null;
+  document.getElementById('transactionForm').reset();
+  document.getElementById('txData').valueAsDate = new Date();
+  populateCategorySelect();
+  populateResponsavelSelect('');
+  document.getElementById('formTitle').textContent = 'Novo lançamento';
+  document.getElementById('submitBtnLabel').textContent = 'Adicionar lançamento';
+  document.getElementById('cancelEditBtn').style.display = 'none';
+}
+
+function editTransaction(id){
+  const tx = state.transacoes.find(t => t.id === id);
+  if(!tx) return;
+  editingId = id;
+  document.getElementById('txTipo').value = tx.tipo;
+  populateCategorySelect();
+  document.getElementById('txCategoria').value = tx.categoria;
+  document.getElementById('txData').value = tx.data;
+  document.getElementById('txValor').value = tx.valor;
+  document.getElementById('txForma').value = tx.formaPagamento;
+  populateResponsavelSelect(tx.responsavel);
+  document.getElementById('txDescricao').value = tx.descricao;
+  document.getElementById('txComprovante').value = tx.comprovante;
+  document.getElementById('formTitle').textContent = 'Editar lançamento';
+  document.getElementById('submitBtnLabel').textContent = 'Salvar alterações';
+  document.getElementById('cancelEditBtn').style.display = 'inline-block';
+  document.getElementById('view-lancamentos').scrollIntoView({behavior:'smooth'});
+}
+
+async function deleteTransaction(id){
+  if(!confirm('Remover este lançamento?')) return;
+  state.transacoes = state.transacoes.filter(t => t.id !== id);
+  await deleteTransactionFromSupabase(id);
+  renderTransactionsView();
+  renderDashboard();
+  showToast('Lançamento removido.');
+}
+
+function getPeriodRange(periodo, customStart, customEnd){
+  const now = new Date();
+  const y = now.getFullYear(), m = now.getMonth();
+  let start, end;
+  if(periodo === 'mes'){
+    start = new Date(y, m, 1);
+    end = new Date(y, m + 1, 0);
+  }else if(periodo === 'trimestre'){
+    start = new Date(y, m - 2, 1);
+    end = new Date(y, m + 1, 0);
+  }else if(periodo === 'ano'){
+    start = new Date(y, 0, 1);
+    end = new Date(y, 11, 31);
+  }else if(periodo === 'custom'){
+    start = customStart ? new Date(customStart + 'T00:00:00') : null;
+    end = customEnd ? new Date(customEnd + 'T23:59:59') : null;
+  }else{
+    return null;
+  }
+  return {start, end};
+}
+
+function inRange(dateStr, range){
+  if(!range) return true;
+  const d = new Date(dateStr + 'T12:00:00');
+  if(range.start && d < range.start) return false;
+  if(range.end && d > range.end) return false;
+  return true;
+}
+
+function onPeriodoChange(){
+  const p = document.getElementById('fPeriodo').value;
+  document.getElementById('fCustomStartWrap').style.display = p === 'custom' ? 'block' : 'none';
+  document.getElementById('fCustomEndWrap').style.display = p === 'custom' ? 'block' : 'none';
+  renderTransactionsView();
+}
+
+function resetFilters(){
+  document.getElementById('fPeriodo').value = 'mes';
+  document.getElementById('fTipo').value = '';
+  document.getElementById('fCategoria').value = '';
+  document.getElementById('fForma').value = '';
+  document.getElementById('fBusca').value = '';
+  onPeriodoChange();
+}
+
+function getFilteredTransactions(){
+  const periodo = document.getElementById('fPeriodo').value;
+  const range = getPeriodRange(periodo, document.getElementById('fCustomStart').value, document.getElementById('fCustomEnd').value);
+  const tipo = document.getElementById('fTipo').value;
+  const categoria = document.getElementById('fCategoria').value;
+  const forma = document.getElementById('fForma').value;
+  const busca = document.getElementById('fBusca').value.trim().toLowerCase();
+
+  return state.transacoes
+    .filter(t => inRange(t.data, range))
+    .filter(t => !tipo || t.tipo === tipo)
+    .filter(t => !categoria || t.categoria === categoria)
+    .filter(t => !forma || t.formaPagamento === forma)
+    .filter(t => !busca || (t.descricao + ' ' + t.responsavel).toLowerCase().includes(busca))
+    .sort((a,b) => b.data.localeCompare(a.data));
+}
+
+function renderTransactionsView(){
+  populateCategorySelect();
+  populateFilterCategorySelects();
+  populateResponsavelSelect();
+  const list = getFilteredTransactions();
+  const tbody = document.getElementById('txTableBody');
+  const emptyState = document.getElementById('txEmptyState');
+
+  if(list.length === 0){
+    tbody.innerHTML = '';
+    emptyState.style.display = 'block';
+  }else{
+    emptyState.style.display = 'none';
+    tbody.innerHTML = list.map(t => `
+      <tr>
+        <td>${formatDateBR(t.data)}</td>
+        <td><span class="pill ${t.tipo === 'entrada' ? 'pill-entrada' : 'pill-saida'}">${t.tipo === 'entrada' ? 'Entrada' : 'Saída'}</span></td>
+        <td>${escapeHtml(t.categoria)}</td>
+        <td>${escapeHtml(t.descricao)}</td>
+        <td class="txt-muted">${escapeHtml(t.formaPagamento || '')}</td>
+        <td class="txt-muted">${escapeHtml(t.responsavel || '—')}</td>
+        <td>${t.comprovante ? `<a href="${/^https?:\/\//.test(t.comprovante) ? escapeHtml(t.comprovante) : '#'}" target="_blank" class="txt-muted" style="text-decoration:underline;">link</a>` : '<span class="txt-muted">—</span>'}</td>
+        <td style="text-align:right;" class="${t.tipo === 'entrada' ? 'val-entrada' : 'val-saida'}">${t.tipo === 'entrada' ? '+' : '−'} ${formatBRL(t.valor)}</td>
+        <td style="white-space:nowrap;">
+          <button class="btn btn-sm btn-ghost" onclick="editTransaction('${t.id}')">Editar</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteTransaction('${t.id}')">Excluir</button>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  const sumEntradas = list.filter(t=>t.tipo==='entrada').reduce((s,t)=>s+t.valor,0);
+  const sumSaidas = list.filter(t=>t.tipo==='saida').reduce((s,t)=>s+t.valor,0);
+  document.getElementById('sumEntradasFiltro').textContent = formatBRL(sumEntradas);
+  document.getElementById('sumSaidasFiltro').textContent = formatBRL(sumSaidas);
+  const resultEl = document.getElementById('sumResultadoFiltro');
+  const resultado = sumEntradas - sumSaidas;
+  resultEl.textContent = formatBRL(resultado);
+  resultEl.className = resultado >= 0 ? 'val-entrada' : 'val-saida';
+}
+
+let monthlyChartInstance = null;
+let entradaDonutInstance = null;
+let saidaDonutInstance = null;
+
+function onDashPeriodoChange(){
+  const p = document.getElementById('dashPeriodo').value;
+  document.getElementById('dashCustomStartWrap').style.display = p === 'custom' ? 'block' : 'none';
+  document.getElementById('dashCustomEndWrap').style.display = p === 'custom' ? 'block' : 'none';
+  renderDashboard();
+}
+
+function getDashboardPeriodRange(){
+  const periodo = document.getElementById('dashPeriodo').value;
+  const today = new Date();
+  const end = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 23, 59, 59);
+  const monthsBack = { mes: 1, bimestre: 2, trimestre: 3, semestre: 6, ano: 12 };
+
+  if(periodo === 'total') return { range: null, label: 'Total (todo o período)' };
+  if(periodo === 'custom'){
+    const startVal = document.getElementById('dashCustomStart').value;
+    const endVal = document.getElementById('dashCustomEnd').value;
+    const start = startVal ? new Date(startVal + 'T00:00:00') : null;
+    const customEnd = endVal ? new Date(endVal + 'T23:59:59') : null;
+    const label = (startVal && endVal) ? `${formatDateBR(startVal)} a ${formatDateBR(endVal)}` : 'Selecione o intervalo';
+    return { range: { start, end: customEnd || end }, label };
+  }
+  const n = monthsBack[periodo] || 1;
+  const start = new Date(today.getFullYear(), today.getMonth() - n, today.getDate());
+  const label = `${formatDateBR(start.toISOString().slice(0,10))} a ${formatDateBR(end.toISOString().slice(0,10))}`;
+  return { range: { start, end }, label };
+}
+
+function renderDashboard(){
+  const saldoAtual = state.saldoInicial.banco + state.saldoInicial.especie
+    + state.transacoes.reduce((s,t)=> s + (t.tipo === 'entrada' ? t.valor : -t.valor), 0);
+
+  const { range, label } = getDashboardPeriodRange();
+  document.getElementById('dashPeriodLabel').textContent = label;
+
+  const periodTx = state.transacoes.filter(t => inRange(t.data, range));
+  const entradasPeriodo = periodTx.filter(t=>t.tipo==='entrada').reduce((s,t)=>s+t.valor,0);
+  const saidasPeriodo = periodTx.filter(t=>t.tipo==='saida').reduce((s,t)=>s+t.valor,0);
+  const resultadoPeriodo = entradasPeriodo - saidasPeriodo;
+
+  const kpiGrid = document.getElementById('kpiGrid');
+  kpiGrid.innerHTML = `
+    <div class="card">
+      <p class="kpi-label">Saldo atual em caixa</p>
+      <p class="kpi-value ${saldoAtual >= 0 ? 'pos':'neg'}">${formatBRL(saldoAtual)}</p>
+      <p class="kpi-sub">Banco ${formatBRL(state.saldoInicial.banco)} · Espécie ${formatBRL(state.saldoInicial.especie)}</p>
+    </div>
+    <div class="card">
+      <p class="kpi-label">Entradas no período</p>
+      <p class="kpi-value pos">${formatBRL(entradasPeriodo)}</p>
+      <p class="kpi-sub">${periodTx.filter(t=>t.tipo==='entrada').length} lançamento(s)</p>
+    </div>
+    <div class="card">
+      <p class="kpi-label">Saídas no período</p>
+      <p class="kpi-value neg">${formatBRL(saidasPeriodo)}</p>
+      <p class="kpi-sub">${periodTx.filter(t=>t.tipo==='saida').length} lançamento(s)</p>
+    </div>
+    <div class="card">
+      <p class="kpi-label">Resultado no período</p>
+      <p class="kpi-value ${resultadoPeriodo >= 0 ? 'pos':'neg'}">${formatBRL(resultadoPeriodo)}</p>
+      <p class="kpi-sub">${resultadoPeriodo >= 0 ? 'Superávit' : 'Déficit'}</p>
+    </div>
+  `;
+
+  renderMonthlyBarChart();
+  renderDonut('entrada', periodTx);
+  renderDonut('saida', periodTx);
+}
+
+function renderMonthlyBarChart(){
+  const months = [];
+  const now = new Date();
+  for(let i=5; i>=0; i--){
+    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    months.push({ y: d.getFullYear(), m: d.getMonth(), label: d.toLocaleDateString('pt-BR', {month:'short', year:'2-digit'}) });
+  }
+  const entradasData = months.map(({y,m}) => state.transacoes
+    .filter(t => t.tipo === 'entrada')
+    .filter(t => { const d = new Date(t.data+'T12:00:00'); return d.getFullYear()===y && d.getMonth()===m; })
+    .reduce((s,t)=>s+t.valor,0));
+  const saidasData = months.map(({y,m}) => state.transacoes
+    .filter(t => t.tipo === 'saida')
+    .filter(t => { const d = new Date(t.data+'T12:00:00'); return d.getFullYear()===y && d.getMonth()===m; })
+    .reduce((s,t)=>s+t.valor,0));
+
+  const ctx = document.getElementById('monthlyBarChart');
+  if(monthlyChartInstance) monthlyChartInstance.destroy();
+  monthlyChartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: months.map(m=>m.label),
+      datasets: [
+        { label: 'Entradas', data: entradasData, backgroundColor: '#3F5B44', borderRadius: 5, maxBarThickness: 28 },
+        { label: 'Saídas', data: saidasData, backgroundColor: '#6E2233', borderRadius: 5, maxBarThickness: 28 }
+      ]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{ position:'bottom', labels:{ font:{family:'Inter'}, usePointStyle:true } } },
+      scales:{
+        y:{ ticks:{ callback:(v)=>'R$ '+v, font:{family:'Inter', size:11} }, grid:{ color:'#EDE4CE' } },
+        x:{ grid:{ display:false }, ticks:{ font:{family:'Inter', size:11} } }
+      }
+    }
+  });
+}
+
+function renderDonut(tipo, monthTx){
+  const list = state.categorias[tipo];
+  const data = list.map(cat => monthTx.filter(t=>t.tipo===tipo && t.categoria===cat).reduce((s,t)=>s+t.valor,0));
+  const colors = list.map(cat => colorForCategory(cat, list));
+  const total = data.reduce((a,b)=>a+b,0);
+
+  const canvasId = tipo === 'entrada' ? 'entradaDonut' : 'saidaDonut';
+  const ctx = document.getElementById(canvasId);
+  if(tipo === 'entrada' && entradaDonutInstance) entradaDonutInstance.destroy();
+  if(tipo === 'saida' && saidaDonutInstance) saidaDonutInstance.destroy();
+
+  const hasData = total > 0;
+  const chartData = hasData ? data : [1];
+  const chartColors = hasData ? colors : ['#E7DFC9'];
+  const chartLabels = hasData ? list : ['Sem lançamentos'];
+
+  const inst = new Chart(ctx, {
+    type: 'doughnut',
+    data: { labels: chartLabels, datasets: [{ data: chartData, backgroundColor: chartColors, borderWidth:2, borderColor:'#FFFDF7' }] },
+    options: {
+      responsive:true, maintainAspectRatio:false, cutout:'62%',
+      plugins:{
+        legend:{ display:false },
+        tooltip:{ enabled: hasData, callbacks:{ label:(ctx)=> ctx.label + ': ' + formatBRL(ctx.raw) } }
+      }
+    }
+  });
+  if(tipo === 'entrada') entradaDonutInstance = inst; else saidaDonutInstance = inst;
+
+  const legendEl = document.getElementById(tipo === 'entrada' ? 'entradaLegend' : 'saidaLegend');
+  if(!hasData){
+    legendEl.innerHTML = '<p class="txt-muted" style="font-size:0.8rem;">Nenhum lançamento no período.</p>';
+    return;
+  }
+  legendEl.innerHTML = list.map((cat, i) => {
+    if(data[i] <= 0) return '';
+    const pct = total > 0 ? ((data[i]/total)*100).toFixed(0) : 0;
+    return `<div class="legend-item">
+      <div class="legend-left"><span class="cat-dot" style="background:${colors[i]}"></span>${escapeHtml(cat)}</div>
+      <div>${formatBRL(data[i])} <span class="txt-muted">(${pct}%)</span></div>
+    </div>`;
+  }).join('');
+}
+
+function onReportPeriodoChange(){
+  const p = document.getElementById('rPeriodo').value;
+  document.getElementById('rCustomStartWrap').style.display = p === 'custom' ? 'block' : 'none';
+  document.getElementById('rCustomEndWrap').style.display = p === 'custom' ? 'block' : 'none';
+}
+
+function renderReport(){
+  populateFilterCategorySelects();
+  const periodo = document.getElementById('rPeriodo').value;
+  const range = getPeriodRange(periodo, document.getElementById('rCustomStart').value, document.getElementById('rCustomEnd').value);
+  const categoria = document.getElementById('rCategoria').value;
+  const ocultar = document.getElementById('rOcultarSensiveis').checked;
+
+  const list = state.transacoes
+    .filter(t => inRange(t.data, range))
+    .filter(t => !categoria || t.categoria === categoria)
+    .sort((a,b) => a.data.localeCompare(b.data));
+
+  const periodoLabels = { mes:'Mês atual', trimestre:'Últimos 3 meses', ano:'Ano atual', tudo:'Todo o período', custom:'Período personalizado' };
+  document.getElementById('reportPeriodLabel').textContent = periodoLabels[periodo] + (categoria ? ' · ' + categoria : '');
+
+  const entradas = list.filter(t=>t.tipo==='entrada').reduce((s,t)=>s+t.valor,0);
+  const saidas = list.filter(t=>t.tipo==='saida').reduce((s,t)=>s+t.valor,0);
+  document.getElementById('reportKpis').innerHTML = `
+    <div class="card">
+      <p class="kpi-label">Total de entradas</p>
+      <p class="kpi-value pos" style="font-size:1.3rem;">${formatBRL(entradas)}</p>
+    </div>
+    <div class="card">
+      <p class="kpi-label">Total de saídas</p>
+      <p class="kpi-value neg" style="font-size:1.3rem;">${formatBRL(saidas)}</p>
+    </div>
+    <div class="card">
+      <p class="kpi-label">Resultado</p>
+      <p class="kpi-value ${entradas-saidas>=0?'pos':'neg'}" style="font-size:1.3rem;">${formatBRL(entradas-saidas)}</p>
+    </div>
+    <div class="card">
+      <p class="kpi-label">Lançamentos</p>
+      <p class="kpi-value" style="font-size:1.3rem;">${list.length}</p>
+    </div>
+  `;
+
+  const head = document.getElementById('reportTableHead');
+  head.innerHTML = `<th>Data</th><th>Tipo</th><th>Categoria</th><th>Descrição</th>` +
+    (ocultar ? '' : `<th>Responsável</th><th>Comprovante</th>`) +
+    `<th style="text-align:right;">Valor</th>`;
+
+  const body = document.getElementById('reportTableBody');
+  const emptyState = document.getElementById('reportEmptyState');
+  if(list.length === 0){
+    body.innerHTML = '';
+    emptyState.style.display = 'block';
+  }else{
+    emptyState.style.display = 'none';
+    body.innerHTML = list.map(t => `
+      <tr>
+        <td>${formatDateBR(t.data)}</td>
+        <td><span class="pill ${t.tipo === 'entrada' ? 'pill-entrada' : 'pill-saida'}">${t.tipo === 'entrada' ? 'Entrada' : 'Saída'}</span></td>
+        <td>${escapeHtml(t.categoria)}</td>
+        <td>${escapeHtml(t.descricao)}</td>
+        ${ocultar ? '' : `<td class="txt-muted">${escapeHtml(t.responsavel || '—')}</td><td class="txt-muted">${escapeHtml(t.comprovante || '—')}</td>`}
+        <td style="text-align:right;" class="${t.tipo === 'entrada' ? 'val-entrada' : 'val-saida'}">${t.tipo === 'entrada' ? '+' : '−'} ${formatBRL(t.valor)}</td>
+      </tr>
+    `).join('');
+  }
+}
+
+function openSettings(){
+  document.getElementById('settingsBanco').value = state.saldoInicial.banco;
+  document.getElementById('settingsEspecie').value = state.saldoInicial.especie;
+  document.getElementById('settingsModal').classList.add('active');
+}
+function closeSettings(){
+  document.getElementById('settingsModal').classList.remove('active');
+}
+function saveSettings(){
+  state.saldoInicial.banco = parseFloat(document.getElementById('settingsBanco').value) || 0;
+  state.saldoInicial.especie = parseFloat(document.getElementById('settingsEspecie').value) || 0;
+  saveState();
+  closeSettings();
+  renderDashboard();
+  showToast('Saldo inicial atualizado.');
+}
+
+function exportJSON(){
+  const blob = new Blob([JSON.stringify(state, null, 2)], { type:'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `caixa-opjbv-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Inicializa a verificação de login
+checkAuth();
+</script>
+
+</body>
+</html>
